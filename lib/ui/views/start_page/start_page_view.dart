@@ -1,10 +1,9 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:munich_motors/ui/common/app_colors.dart';
+import 'package:munich_motors/ui/common/assets.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../custom_widgets/custom_button.dart';
 import 'start_page_viewmodel.dart';
 
@@ -27,7 +26,7 @@ class StartPageView extends StackedView<StartPageViewModel> {
             child: Container(
               height: 40, // Set height for your logo
               child: Image.asset(
-                'assets/images/logo.png', // Path to your logo
+                AppImages.appLogo, // Path to your logo
                 fit: BoxFit.contain, // Maintain aspect ratio
               ),
             ),
@@ -49,7 +48,7 @@ class StartPageView extends StackedView<StartPageViewModel> {
                     // No color, just use a gradient to simulate the shade
                     gradient: RadialGradient(
                       colors: [
-                        Color(0xFF1FB3A5).withOpacity(0.60),
+                        AppColors.teal.withOpacity(0.60),
                         // Light blue shade with 20% opacity
                         Colors.transparent,
                         // Fade to transparent
@@ -61,7 +60,7 @@ class StartPageView extends StackedView<StartPageViewModel> {
                     ),
                   ),
                   child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 70.0, sigmaY: 70.0),
+                    filter: ImageFilter.blur(sigmaX: 50.0, sigmaY: 50.0),
                     // High blur effect
                     child: Container(
                       color: Colors
@@ -72,11 +71,13 @@ class StartPageView extends StackedView<StartPageViewModel> {
 
                 // Foreground image
                 Container(
-                  width: 297, // Image size
-                  height: 128.39,
+                  width: 297.w, // Image size
+                  height: 128.h,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/cars.png'),
+                      image: AssetImage(
+                          AppImages.carImage,
+                      ),
                       // Your image path
                       fit: BoxFit.contain, // Keeps the original aspect ratio
                     ),

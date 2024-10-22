@@ -4,7 +4,8 @@ const String imagesPath = "assets/images";
 const String svgsPath = "assets/icons";
 
 class AppImages {
-  static const String carImage = "$imagesPath/car_image.png";
+  static const String carImage = "$imagesPath/cars.png";
+  static const String appLogo = "$imagesPath/logo.png";
 }
 
 class AppSVGs {

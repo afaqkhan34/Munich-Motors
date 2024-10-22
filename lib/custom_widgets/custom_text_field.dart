@@ -55,7 +55,7 @@ class CustomTextField extends StatelessWidget {
             child: TextField(
               obscureText: obscureText, // Use the obscureText property
               decoration: InputDecoration(
-                hintText: hintText,, // Hint text
+                hintText: hintText,// Hint text
                 border: InputBorder.none, // Remove default border
                 contentPadding: EdgeInsets.symmetric(vertical: 12), // Adjust padding
                 suffixIcon: endIcon != null // Use built-in Flutter icon as the end icon

@@ -18,7 +18,7 @@ class StartPageView extends StackedView<StartPageViewModel> {
   ) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80.0),
+        preferredSize: Size.fromHeight(80),
         child: AppBar(
           elevation: 0, // Flat AppBar
           flexibleSpace: Align(
@@ -48,7 +48,7 @@ class StartPageView extends StackedView<StartPageViewModel> {
                     // No color, just use a gradient to simulate the shade
                     gradient: RadialGradient(
                       colors: [
-                        AppColors.teal.withOpacity(0.60),
+                        AppColors.teal.withOpacity(0.20),
                         // Light blue shade with 20% opacity
                         Colors.transparent,
                         // Fade to transparent
@@ -71,8 +71,8 @@ class StartPageView extends StackedView<StartPageViewModel> {
 
                 // Foreground image
                 Container(
-                  width: 297.w, // Image size
-                  height: 128.h,
+                  width: 297, // Image size
+                  height: 128,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
@@ -85,7 +85,7 @@ class StartPageView extends StackedView<StartPageViewModel> {
                 ),
               ],
             ),
-            SizedBox(height: 82.61),
+            SizedBox(height: 82),
             CustomButton(
               label: 'Sign In',
               onPressed: () {

@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:munich_motors/ui/common/app_colors.dart'; // Import for SVG support
+import 'package:munich_motors/ui/common/app_colors.dart';
+import 'package:munich_motors/ui/common/textstyles.dart'; // Import for SVG support
 
 class CustomTextField extends StatelessWidget {
   final String hintText;
+
   final String? startIconPath; // Path for the start icon (optional)
   final IconData? endIcon; // Built-in Flutter icon for the end icon (optional)
-  final bool obscureText; // Optional parameter to hide text (for passwords)
+  final bool obscureText;
+  final TextEditingController?
+      controller; // Optional parameter to hide text (for passwords)
 
   const CustomTextField({
     Key? key,
     required this.hintText,
     this.startIconPath,
     this.endIcon, // Use IconData for the end icon
-    this.obscureText = false, // Default is false (not obscured)
+    this.obscureText = false,
+    this.controller, // Default is false (not obscured)
   }) : super(key: key);
 
   @override
@@ -29,7 +34,8 @@ class CustomTextField extends StatelessWidget {
         ),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min, // Make the Row only take the required space
+        mainAxisSize:
+            MainAxisSize.min, // Make the Row only take the required space
         children: [
           // Start Icon (optional)
           if (startIconPath != null) ...[
@@ -48,24 +54,29 @@ class CustomTextField extends StatelessWidget {
             width: 1, // Width of the divider
             height: 24, // Height of the divider
             color: AppColors.grey, // Divider color
-            margin: const EdgeInsets.symmetric(horizontal: 8.0), // Spacing around the divider
+            margin: const EdgeInsets.symmetric(
+                horizontal: 8.0), // Spacing around the divider
           ),
           // Expanded TextField with hint text
           Expanded(
             child: TextField(
+              controller: controller,
               obscureText: obscureText, // Use the obscureText property
               decoration: InputDecoration(
-                hintText: hintText,// Hint text
+                hintText: hintText,
+                hintStyle: TextStyles.smallLight, // Hint text
                 border: InputBorder.none, // Remove default border
-                contentPadding: EdgeInsets.symmetric(vertical: 12), // Adjust padding
-                suffixIcon: endIcon != null // Use built-in Flutter icon as the end icon
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 12), // Adjust padding
+                suffixIcon: endIcon !=
+                        null // Use built-in Flutter icon as the end icon
                     ? Padding(
-                  padding: const EdgeInsets.only(right: 8.0),
-                  child: Icon(
-                    endIcon,
-                    color: AppColors.darkGrey, // Color of the end icon
-                  ),
-                )
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Icon(
+                          endIcon,
+                          color: AppColors.darkGrey, // Color of the end icon
+                        ),
+                      )
                     : null,
               ),
             ),

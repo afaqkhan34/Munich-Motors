@@ -76,7 +76,7 @@ class StartPageView extends StackedView<StartPageViewModel> {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
-                          AppImages.carImage,
+                        AppImages.carImage,
                       ),
                       // Your image path
                       fit: BoxFit.contain, // Keeps the original aspect ratio

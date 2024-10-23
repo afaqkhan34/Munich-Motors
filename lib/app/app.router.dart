@@ -5,17 +5,23 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i7;
+import 'package:flutter/material.dart' as _i10;
 import 'package:flutter/material.dart';
+import 'package:munich_motors/ui/views/forgot_password/forgot_password_view.dart'
+    as _i8;
 import 'package:munich_motors/ui/views/home/home_view.dart' as _i2;
+import 'package:munich_motors/ui/views/home_screen/home_screen_view.dart'
+    as _i7;
 import 'package:munich_motors/ui/views/login_screen/login_screen_view.dart'
     as _i5;
 import 'package:munich_motors/ui/views/signup_screen/signup_screen_view.dart'
     as _i6;
 import 'package:munich_motors/ui/views/start_page/start_page_view.dart' as _i4;
 import 'package:munich_motors/ui/views/startup/startup_view.dart' as _i3;
+import 'package:munich_motors/ui/views/verify_email/verify_email_view.dart'
+    as _i9;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i8;
+import 'package:stacked_services/stacked_services.dart' as _i11;
 
 class Routes {
   static const homeView = '/home-view';
@@ -28,12 +34,21 @@ class Routes {
 
   static const signupScreenView = '/signup-screen-view';
 
+  static const homeScreenView = '/home-screen-view';
+
+  static const forgotPasswordView = '/forgot-password-view';
+
+  static const verifyEmailView = '/verify-email-view';
+
   static const all = <String>{
     homeView,
     startupView,
     startPageView,
     loginScreenView,
     signupScreenView,
+    homeScreenView,
+    forgotPasswordView,
+    verifyEmailView,
   };
 }
 
@@ -59,36 +74,66 @@ class StackedRouter extends _i1.RouterBase {
       Routes.signupScreenView,
       page: _i6.SignupScreenView,
     ),
+    _i1.RouteDef(
+      Routes.homeScreenView,
+      page: _i7.HomeScreenView,
+    ),
+    _i1.RouteDef(
+      Routes.forgotPasswordView,
+      page: _i8.ForgotPasswordView,
+    ),
+    _i1.RouteDef(
+      Routes.verifyEmailView,
+      page: _i9.VerifyEmailView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i7.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i7.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.StartPageView: (data) {
-      return _i7.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.StartPageView(),
         settings: data,
       );
     },
     _i5.LoginScreenView: (data) {
-      return _i7.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.LoginScreenView(),
         settings: data,
       );
     },
     _i6.SignupScreenView: (data) {
-      return _i7.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.SignupScreenView(),
+        settings: data,
+      );
+    },
+    _i7.HomeScreenView: (data) {
+      return _i10.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i7.HomeScreenView(),
+        settings: data,
+      );
+    },
+    _i8.ForgotPasswordView: (data) {
+      return _i10.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i8.ForgotPasswordView(),
+        settings: data,
+      );
+    },
+    _i9.VerifyEmailView: (data) {
+      return _i10.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i9.VerifyEmailView(),
         settings: data,
       );
     },
@@ -101,7 +146,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i8.NavigationService {
+extension NavigatorStateExtension on _i11.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -172,6 +217,48 @@ extension NavigatorStateExtension on _i8.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToHomeScreenView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.homeScreenView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToForgotPasswordView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.forgotPasswordView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToVerifyEmailView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.verifyEmailView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -236,6 +323,48 @@ extension NavigatorStateExtension on _i8.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.signupScreenView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithHomeScreenView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.homeScreenView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithForgotPasswordView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.forgotPasswordView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithVerifyEmailView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.verifyEmailView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

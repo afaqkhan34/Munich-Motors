@@ -10,9 +10,8 @@ class StartPageViewModel extends BaseViewModel {
   navigateToLoginScreenView() {
     _navigationService.navigateToLoginScreenView();
   }
-  navigateToSignupScreenView(){
+
+  navigateToSignupScreenView() {
     _navigationService.navigateToSignupScreenView();
   }
-
-
 }

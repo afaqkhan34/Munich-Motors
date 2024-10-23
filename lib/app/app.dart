@@ -7,6 +7,10 @@ import 'package:stacked_services/stacked_services.dart';
 import 'package:munich_motors/ui/views/start_page/start_page_view.dart';
 import 'package:munich_motors/ui/views/login_screen/login_screen_view.dart';
 import 'package:munich_motors/ui/views/signup_screen/signup_screen_view.dart';
+
+import 'package:munich_motors/ui/views/home_screen/home_screen_view.dart';
+import 'package:munich_motors/ui/views/forgot_password/forgot_password_view.dart';
+import 'package:munich_motors/ui/views/verify_email/verify_email_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -16,6 +20,10 @@ import 'package:munich_motors/ui/views/signup_screen/signup_screen_view.dart';
     MaterialRoute(page: StartPageView),
     MaterialRoute(page: LoginScreenView),
     MaterialRoute(page: SignupScreenView),
+
+    MaterialRoute(page: HomeScreenView),
+    MaterialRoute(page: ForgotPasswordView),
+    MaterialRoute(page: VerifyEmailView),
 // @stacked-route
   ],
   dependencies: [

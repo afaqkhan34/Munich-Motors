@@ -18,4 +18,8 @@ class AppSVGs {
   static const String partnerIcon = "$svgsPath/partner_icon.svg";
   static const String contactIcon = "$svgsPath/contact_icon.svg";
   static const String brandsIcon = "$svgsPath/brands_icon.svg";
+  static const String recoveryIcon = "$svgsPath/recovery_icon.svg";
+  static const String bookingIcon = "$svgsPath/booking_icon.svg";
+  static const String corporateIcon = "$svgsPath/corporate_offer_icon.svg";
+  static const String carIcon = "$svgsPath/munich_icon.svg";
 }

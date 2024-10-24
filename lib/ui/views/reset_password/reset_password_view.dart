@@ -3,20 +3,20 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:munich_motors/custom_widgets/custom_button.dart';
 import 'package:munich_motors/custom_widgets/custom_text_field.dart';
-import 'package:munich_motors/ui/common/textstyles.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../common/app_colors.dart';
 import '../../common/assets.dart';
-import 'forgot_password_viewmodel.dart';
+import '../../common/textstyles.dart';
+import 'reset_password_viewmodel.dart';
 
-class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
-  const ForgotPasswordView({Key? key}) : super(key: key);
+class ResetPasswordView extends StackedView<ResetPasswordViewModel> {
+  const ResetPasswordView({Key? key}) : super(key: key);
 
   @override
   Widget builder(
     BuildContext context,
-    ForgotPasswordViewModel viewModel,
+    ResetPasswordViewModel viewModel,
     Widget? child,
   ) {
     return Scaffold(
@@ -76,27 +76,38 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
                 ),
               ],
             ),
-            Text('Forgot Password?', style: TextStyles.largeBold),
+
+            Text('Reset Password', style: TextStyles.largeBold),
             SizedBox(
               height: 10,
             ),
-            Text(
-                'Don’t worry! It happens. Please enter the email associated with your account.',
+            Text('Please type something you’ll remember ',
                 style: TextStyles.regular),
             SizedBox(
-              height: 25,
+              height: 16,
             ),
             CustomTextField(
-              hintText: 'Email Address',
-              startIconPath: AppSVGs.emailIcon,
+              hintText: 'New Password',
+              startIconPath: AppSVGs.passwordIcon,
+              obscureText: true,
+              endIcon: Icons.remove_red_eye_sharp,
             ),
             SizedBox(
-              height: 20,
+              height: 15,
+            ),
+            CustomTextField(
+              hintText: 'Confirm New Password',
+              startIconPath: AppSVGs.passwordIcon,
+              obscureText: true,
+              endIcon: Icons.remove_red_eye_sharp,
+            ),
+            SizedBox(
+              height: 28,
             ),
             CustomButton(
-              label: 'Send Code',
+              label: 'Reset Password',
               onPressed: () {
-                viewModel.navigateToVerifyEmailView();
+                viewModel.navigateToPasswordChangedView();
               },
               borderWidth: 0,
               color: AppColors.lightTeal,
@@ -108,8 +119,8 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
   }
 
   @override
-  ForgotPasswordViewModel viewModelBuilder(
+  ResetPasswordViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      ForgotPasswordViewModel();
+      ResetPasswordViewModel();
 }

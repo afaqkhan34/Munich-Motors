@@ -1,5 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:munich_motors/custom_widgets/custom_button.dart';
+import 'package:munich_motors/ui/views/start_page/start_page_view.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../custom_widgets/custom_text_field.dart';
@@ -38,67 +41,134 @@ class VerifyEmailView extends StackedView<VerifyEmailViewModel> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 35),
-    child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-    SizedBox(
-    height: 215,
-    ),
-    Text('Please check your email', style: TextStyles.largeBold),
-    SizedBox(
-    height: 10,
-    ),
-    Text(
-    'We’ve sent a code to ',
-    style: TextStyles.regular),
-    Text('helloworld@gmail.com',style: TextStyles.smallLight.copyWith(color: AppColors.black, fontWeight: FontWeight.bold),),
-    SizedBox(
-    height: 25,),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              width: 70,
-              height: 59,
-              child: CustomTextField(
-                hintText: '1', // Use hint text as per your need
-              ),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  width: 500, // Adjust width
+                  height: 300, // Adjust height to make it circular
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    // Ensure the container is circular
+                    gradient: RadialGradient(
+                      center: const Alignment(0.0, -0.2),
+                      // Adjust the gradient center
+                      radius: 1.5,
+                      // Increase radius for smooth fading
+                      colors: [
+                        AppColors.teal.withOpacity(0.20),
+                        // Teal color with transparency
+                        Colors.transparent,
+                        // Fade to transparent
+                      ],
+                      stops: const [0.4, 0.7], // Smooth gradient transition
+                    ),
+                  ),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 50.0, sigmaY: 50.0),
+                    // Blurring effect
+                    child: Container(
+                      color: Colors.transparent,
+                    ),
+                  ),
+                ),
+              ],
             ),
-            SizedBox(width: 14), // Space between text fields
+            Text('Please check your email', style: TextStyles.largeBold),
             SizedBox(
-              width: 70,
-              height: 59,
-              child: CustomTextField(
-                hintText: '2', // Use hint text as per your need
-              ),
+              height: 5,
             ),
-            SizedBox(width: 14), // Space between text fields
+            Text('We’ve sent a code to ', style: TextStyles.regular),
+            Text(
+              'helloworld@gmail.com',
+              style: TextStyles.smallLight.copyWith(
+                  color: AppColors.black, fontWeight: FontWeight.bold),
+            ),
             SizedBox(
-              width: 70,
-              height: 59,
-              child: CustomTextField(
-                hintText: '3', // Use hint text as per your need
-              ),
+              height: 25,
             ),
-            SizedBox(width: 14), // Space between text fields
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _buildTextField(
+                  controller: viewModel.controller1,
+                  focusNode: viewModel.focusNode1,
+                  onChanged: (value) =>
+                      viewModel.nextField(value, viewModel.focusNode2),
+                ),
+                _buildTextField(
+                  controller: viewModel.controller2,
+                  focusNode: viewModel.focusNode2,
+                  onChanged: (value) =>
+                      viewModel.nextField(value, viewModel.focusNode3),
+                ),
+                _buildTextField(
+                  controller: viewModel.controller3,
+                  focusNode: viewModel.focusNode3,
+                  onChanged: (value) =>
+                      viewModel.nextField(value, viewModel.focusNode4),
+                ),
+                _buildTextField(
+                  controller: viewModel.controller4,
+                  focusNode: viewModel.focusNode4,
+                  onChanged: (value) => viewModel.completeInput(value),
+                ),
+              ],
+            ),
             SizedBox(
-              width: 70,
-              height: 59,
-              child: CustomTextField(
-                hintText: '4', // Use hint text as per your need
-              ),
+              height: 20,
             ),
+            CustomButton(
+              label: 'Verify',
+              onPressed: () {
+                viewModel.navigateToResetPasswordView();
+              },
+              borderWidth: 0,
+              color: AppColors.lightTeal,
+            )
           ],
         ),
-      SizedBox(height: 20,),
-      CustomButton(label: 'Verify', onPressed: (){}, borderWidth: 0,color: AppColors.lightTeal,)
-      
-
-
-
-  ],
       ),
-    ),
+    );
+  }
+
+  Widget _buildTextField({
+    required TextEditingController controller,
+    required FocusNode focusNode,
+    required Function(String) onChanged,
+  }) {
+    return SizedBox(
+      width: 70,
+      height: 59,
+      child: TextFormField(
+        controller: controller,
+        focusNode: focusNode,
+        maxLength: 1,
+        textAlign: TextAlign.center,
+        style: TextStyles.largeBold,
+        keyboardType: TextInputType.number,
+        decoration: InputDecoration(
+          counterText: "",
+          border: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: AppColors.lightGrey,
+              width: 1,
+            ),
+            borderRadius: BorderRadius.circular(15),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide(
+              color: AppColors.lightGrey, // Border color when focused
+              width: 1,
+            ),
+          ),
+        ),
+        onChanged: onChanged,
+      ),
     );
   }
 

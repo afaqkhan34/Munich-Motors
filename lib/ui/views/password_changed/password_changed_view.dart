@@ -37,53 +37,56 @@ class PasswordChangedView extends StackedView<PasswordChangedViewModel> {
           ),
         ),
       ),
-      body:Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 35),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 20,),
-          Stack(
-          alignment: Alignment.center,
-          children: [
-            Container(
-              width: 500, // Adjust width
-              height: 300, // Adjust height to make it circular
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                // Ensure the container is circular
-                gradient: RadialGradient(
-                  center: const Alignment(0.0, -0.2),
-                  // Adjust the gradient center
-                  radius: 1.5,
-                  // Increase radius for smooth fading
-                  colors: [
-                    AppColors.teal.withOpacity(0.20),
-                    // Teal color with transparency
-                    Colors.transparent,
-                    // Fade to transparent
-                  ],
-                  stops: const [0.4, 0.7], // Smooth gradient transition
-                ),
-              ),
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 50.0, sigmaY: 50.0),
-                // Blurring effect
-                child: Container(
-                  color: Colors.transparent,
-                ),
-              ),
+            SizedBox(
+              height: 20,
             ),
-            ],
-        ),
-
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  width: 500, // Adjust width
+                  height: 300, // Adjust height to make it circular
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    // Ensure the container is circular
+                    gradient: RadialGradient(
+                      center: const Alignment(0.0, -0.2),
+                      // Adjust the gradient center
+                      radius: 1.5,
+                      // Increase radius for smooth fading
+                      colors: [
+                        AppColors.teal.withOpacity(0.20),
+                        // Teal color with transparency
+                        Colors.transparent,
+                        // Fade to transparent
+                      ],
+                      stops: const [0.4, 0.7], // Smooth gradient transition
+                    ),
+                  ),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 50.0, sigmaY: 50.0),
+                    // Blurring effect
+                    child: Container(
+                      color: Colors.transparent,
+                    ),
+                  ),
+                ),
+              ],
+            ),
             Text('Password Changed', style: TextStyles.largeBold),
             SizedBox(
               height: 10,
             ),
             Text('Your password has been changed succesfully ',
                 style: TextStyles.regular),
-            SizedBox(height: 30,),
+            SizedBox(
+              height: 30,
+            ),
             CustomButton(
               label: 'Sign In ',
               onPressed: () {
@@ -93,7 +96,6 @@ class PasswordChangedView extends StackedView<PasswordChangedViewModel> {
               color: AppColors.lightTeal,
             ),
           ],
-
         ),
       ),
     );

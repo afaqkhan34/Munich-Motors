@@ -1,10 +1,3 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
-
-// **************************************************************************
-// StackedNavigatorGenerator
-// **************************************************************************
-
-// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter/material.dart' as _i12;
 import 'package:flutter/material.dart';
 import 'package:munich_motors/ui/views/forgot_password/forgot_password_view.dart'
@@ -139,7 +132,7 @@ class StackedRouter extends _i1.RouterBase {
     },
     _i7.HomeScreenView: (data) {
       return _i12.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i7.HomeScreenView(),
+        builder: (context) =>  _i7.HomeScreenView(),
         settings: data,
       );
     },

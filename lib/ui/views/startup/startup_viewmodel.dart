@@ -1,6 +1,7 @@
+import 'package:munich_motors/app/app_router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:munich_motors/app/app.locator.dart';
-import 'package:munich_motors/app/app.router.dart';
+
 import 'package:stacked_services/stacked_services.dart';
 
 class StartupViewModel extends BaseViewModel {

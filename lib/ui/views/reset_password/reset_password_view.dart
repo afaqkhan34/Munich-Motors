@@ -39,7 +39,7 @@ class ResetPasswordView extends StackedView<ResetPasswordViewModel> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 35),
+        padding: const EdgeInsets.symmetric(horizontal: 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -76,7 +76,6 @@ class ResetPasswordView extends StackedView<ResetPasswordViewModel> {
                 ),
               ],
             ),
-
             Text('Reset Password', style: TextStyles.largeBold),
             SizedBox(
               height: 10,

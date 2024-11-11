@@ -3,7 +3,6 @@ import 'package:stacked/stacked.dart';
 import 'package:munich_motors/ui/common/app_colors.dart';
 import 'package:munich_motors/ui/common/ui_helpers.dart';
 
-
 import 'home_viewmodel.dart';
 
 class HomeView extends StackedView<HomeViewModel> {

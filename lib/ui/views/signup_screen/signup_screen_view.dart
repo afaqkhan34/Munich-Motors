@@ -109,7 +109,6 @@ class SignupScreenView extends StackedView<SignupScreenViewModel> {
             CustomTextField(
               hintText: 'User Name',
               startIconPath: AppSVGs.nameIcon,
-              controller: viewModel.emailController,
             ),
             SizedBox(
               height: 20,

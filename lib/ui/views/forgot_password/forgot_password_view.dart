@@ -39,9 +39,10 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 35),
+        padding: const EdgeInsets.symmetric(horizontal: 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Stack(
               alignment: Alignment.center,

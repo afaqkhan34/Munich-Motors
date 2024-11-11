@@ -6,6 +6,10 @@ const String svgsPath = "assets/icons";
 class AppImages {
   static const String carImage = "$imagesPath/cars.png";
   static const String appLogo = "$imagesPath/logo.png";
+  static const String munichLogo = "$imagesPath/munich_logo.png";
+  static const String carPic = "$imagesPath/car_image.png";
+  static const String cari = "$imagesPath/car_i.jpeg";
+  static const String carim = "$imagesPath/car_im.jpeg";
 }
 
 class AppSVGs {
@@ -22,4 +26,5 @@ class AppSVGs {
   static const String bookingIcon = "$svgsPath/booking_icon.svg";
   static const String corporateIcon = "$svgsPath/corporate_offer_icon.svg";
   static const String carIcon = "$svgsPath/munich_icon.svg";
+  static const String locationIcon = "$svgsPath/location_icon.svg";
 }

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:munich_motors/app/app.bottomsheets.dart';
 import 'package:munich_motors/app/app.dialogs.dart';
 import 'package:munich_motors/app/app.locator.dart';
-import 'package:munich_motors/app/app.router.dart';
+
 import 'package:stacked_services/stacked_services.dart';
+
+import 'app/app_router.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,10 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:munich_motors/custom_widgets/bottom_navigation_bar.dart';
 import 'package:munich_motors/ui/common/app_colors.dart';
 import 'package:munich_motors/ui/common/assets.dart';
 import 'package:stacked/stacked.dart';
 
+import '../../../custom_widgets/icon_button_grid.dart';
 import 'home_screen_viewmodel.dart';
 
 class HomeScreenView extends StackedView<HomeScreenViewModel> {
@@ -90,7 +91,8 @@ class HomeScreenView extends StackedView<HomeScreenViewModel> {
                     height: 182.0, // Set the height here
                     margin: const EdgeInsets.symmetric(horizontal: 5.0),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0), // Circular edges
+                      borderRadius:
+                          BorderRadius.circular(15.0), // Circular edges
                       image: DecorationImage(
                         image: AssetImage(path),
                         fit: BoxFit.cover,
@@ -129,6 +131,16 @@ class HomeScreenView extends StackedView<HomeScreenViewModel> {
               );
             }).toList(),
           ),
+          IconButtonGrid(
+            buttonActions: [
+              viewModel.navigateToBookingAppointmentView,
+              viewModel.navigateToRecoveryRequestView,
+              viewModel.navigateToSpecialOffersView,
+              () {},
+              () {},
+            ], // Pass a list of unique navigation functions
+          ),
+          BottomNavBar(currentIndex: 2, onTap: viewModel.onNavBarTapped),
         ],
       ),
     );

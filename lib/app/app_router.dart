@@ -132,7 +132,7 @@ class StackedRouter extends _i1.RouterBase {
     },
     _i7.HomeScreenView: (data) {
       return _i12.MaterialPageRoute<dynamic>(
-        builder: (context) =>  _i7.HomeScreenView(),
+        builder: (context) => _i7.HomeScreenView(),
         settings: data,
       );
     },

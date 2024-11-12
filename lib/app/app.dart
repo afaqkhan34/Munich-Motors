@@ -15,6 +15,15 @@ import 'package:munich_motors/ui/views/reset_password/reset_password_view.dart';
 import 'package:munich_motors/ui/views/password_changed/password_changed_view.dart';
 import 'package:munich_motors/ui/views/home_screen/home_screen_view.dart';
 
+import 'package:munich_motors/ui/views/booking_appointment/booking_appointment_view.dart';
+import 'package:munich_motors/ui/views/recovery_request/recovery_request_view.dart';
+import 'package:munich_motors/ui/views/special_offers/special_offers_view.dart';
+import 'package:munich_motors/ui/views/contact_support/contact_support_view.dart';
+import 'package:munich_motors/ui/views/brands_serve/brands_serve_view.dart';
+import 'package:munich_motors/ui/views/our_partners/our_partners_view.dart';
+import 'package:munich_motors/ui/views/about_us/about_us_view.dart';
+import 'package:munich_motors/ui/views/contact_support/contact_support_view.dart';
+import 'package:munich_motors/ui/views/location/location_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -32,6 +41,15 @@ import 'package:munich_motors/ui/views/home_screen/home_screen_view.dart';
     MaterialRoute(page: PasswordChangedView),
     MaterialRoute(page: HomeScreenView),
 
+    MaterialRoute(page: BookingAppointmentView),
+    MaterialRoute(page: RecoveryRequestView),
+    MaterialRoute(page: SpecialOffersView),
+    MaterialRoute(page: ContactSupportView),
+    MaterialRoute(page: BrandsServeView),
+    MaterialRoute(page: OurPartnersView),
+    MaterialRoute(page: AboutUsView),
+    MaterialRoute(page: ContactSupportView),
+    MaterialRoute(page: LocationView),
 // @stacked-route
   ],
   dependencies: [

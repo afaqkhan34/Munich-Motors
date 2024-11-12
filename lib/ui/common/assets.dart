@@ -13,6 +13,8 @@ class AppImages {
 }
 
 class AppSVGs {
+  static const String svgsPath = 'assets/svg_icons';
+
   /// Onboarding Screen Icons
   static const String emailIcon = "$svgsPath/email_icon.svg";
   static const String passwordIcon = "$svgsPath/password_icon.svg";
@@ -27,4 +29,6 @@ class AppSVGs {
   static const String corporateIcon = "$svgsPath/corporate_offer_icon.svg";
   static const String carIcon = "$svgsPath/munich_icon.svg";
   static const String locationIcon = "$svgsPath/location_icon.svg";
+  static const String supportIcon = "$svgsPath/support_icon.svg";
+  static const String logIcon = "$svgsPath/logo_icon.svg";
 }

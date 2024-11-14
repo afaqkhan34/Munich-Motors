@@ -45,8 +45,8 @@ class IconButtonGrid extends StatelessWidget {
             ),
             child: SvgPicture.asset(
               svgPath,
-              width: 35,
-              height: 35,
+              width: 30,
+              height: 30,
             ),
           ),
           const SizedBox(height: 8.0),

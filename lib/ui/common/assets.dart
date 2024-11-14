@@ -10,6 +10,8 @@ class AppImages {
   static const String carPic = "$imagesPath/car_image.png";
   static const String cari = "$imagesPath/car_i.jpeg";
   static const String carim = "$imagesPath/car_im.jpeg";
+  static const String profile = "$imagesPath/profile.png";
+  static const String offer = "$imagesPath/offer.png";
 }
 
 class AppSVGs {
@@ -20,7 +22,7 @@ class AppSVGs {
   static const String passwordIcon = "$svgsPath/password_icon.svg";
   static const String nameIcon = "$svgsPath/name_icon.svg";
   static const String aboutIcon = "$svgsPath/about_icon.svg";
-  static const String offersIcon = "$svgsPath/offers_icon.svg";
+  static const String offersIcon = "$svgsPath/special_offers.svg";
   static const String partnerIcon = "$svgsPath/partner_icon.svg";
   static const String contactIcon = "$svgsPath/contact_icon.svg";
   static const String brandsIcon = "$svgsPath/brands_icon.svg";
@@ -31,4 +33,7 @@ class AppSVGs {
   static const String locationIcon = "$svgsPath/location_icon.svg";
   static const String supportIcon = "$svgsPath/support_icon.svg";
   static const String logIcon = "$svgsPath/logo_icon.svg";
+  static const String logoutIcon = "$svgsPath/logout_icon.svg";
+  static const String settingIcon = "$svgsPath/setting_icon.svg";
+
 }

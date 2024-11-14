@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:munich_motors/custom_widgets/bottom_navigation_bar.dart';
-import 'package:munich_motors/ui/common/app_colors.dart';
+import 'package:munich_motors/custom_widgets/custom_drawer.dart';
 import 'package:munich_motors/ui/common/assets.dart';
 import 'package:stacked/stacked.dart';
 
+import '../../../custom_widgets/bottom_nav.dart';
 import '../../../custom_widgets/icon_button_grid.dart';
 import 'home_screen_viewmodel.dart';
 
@@ -41,41 +41,12 @@ class HomeScreenView extends StackedView<HomeScreenViewModel> {
           ),
         ],
       ),
-      drawer: Drawer(
-        backgroundColor: AppColors.white,
-        child: ListView(
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: AppColors.white,
-              ),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: CircleAvatar(
-                  radius: 50,
-                ),
-              ),
-            ),
-            ListTile(
-              title: Text('Home'),
-              onTap: () {
-                // Handle navigation or other actions
-              },
-            ),
-            ListTile(
-              title: Text('Settings'),
-              onTap: () {
-                // Handle navigation or other actions
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: CustomDrawer(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(160, 0, 130, 25),
+            padding: const EdgeInsets.fromLTRB(130, 0, 130, 25),
             child: Image.asset(
               AppImages.appLogo,
               width: 129,
@@ -140,7 +111,7 @@ class HomeScreenView extends StackedView<HomeScreenViewModel> {
               () {},
             ], // Pass a list of unique navigation functions
           ),
-          BottomNavBar(currentIndex: 2, onTap: viewModel.onNavBarTapped),
+          BottomNav(currentIndex: 2, onTap: viewModel.onNavBarTapped),
         ],
       ),
     );
